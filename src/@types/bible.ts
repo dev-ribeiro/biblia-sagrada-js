@@ -18,7 +18,6 @@ export interface BibleType {
 }
 
 export interface IBibleType {
-  biblie: BibleType[];
   getAllVerses: () => any;
   getChapter: (param: Books, chapter: number) => any;
 }

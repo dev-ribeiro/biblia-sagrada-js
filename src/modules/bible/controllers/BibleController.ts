@@ -1,22 +1,22 @@
-import { BibleVersion, Books } from '../../../@types/biblies.js';
+import { BibleVersion, Books } from '../../../@types/bible.js';
 import { CustomError } from '../../../utils/CustomError.js';
 import { Bible } from '../models/Bible.js';
 
 
 export class BibleController {
-  private controlledBible;
+  #biblie;
 
   constructor(version: BibleVersion) {
-    this.controlledBible = new Bible(version);
+    this.#biblie = new Bible(version);
   }
 
   getAllVerses() {
-    return this.controlledBible.getAllVerses();
+    return this.#biblie.getAllVerses();
   }
 
   getChapter(book: Books, chapter: number) {
     try {
-      return this.controlledBible.getChapter(book, chapter);
+      return this.#biblie.getChapter(book, chapter);
     } catch (error) {
       if (error instanceof CustomError) {
         console.error(error.message)
@@ -26,5 +26,9 @@ export class BibleController {
 
       return null
     }
+  }
+
+  getRandomChapter() {
+    return this.#biblie.getRandomChapter()
   }
 }

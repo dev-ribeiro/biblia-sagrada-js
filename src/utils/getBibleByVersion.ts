@@ -1,4 +1,4 @@
-import { BibleVersion } from '../@types/biblies';
+import { BibleVersion } from '../@types/bible';
 import nvi from '../assets/pt-br/nvi.json';
 import aa from '../assets/pt-br/aa.json';
 import acf from '../assets/pt-br/acf.json';
